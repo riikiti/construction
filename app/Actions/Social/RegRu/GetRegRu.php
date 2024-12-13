@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions\RegRu;
+namespace App\Actions\Social\RegRu;
 
 use App\Actions\GetInfoInterface;
 use GuzzleHttp\Client;

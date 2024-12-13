@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions\RegRu;
+namespace App\Actions\Social\RegRu;
 
 use App\Enums\Methods\RegRuApiMethodsEnum;
 use GuzzleHttp\Exception\GuzzleException;

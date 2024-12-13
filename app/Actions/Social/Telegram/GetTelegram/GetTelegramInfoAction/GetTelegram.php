@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions\Telegram\GetTelegram\GetTelegramInfoAction;
+namespace App\Actions\Social\Telegram\GetTelegram\GetTelegramInfoAction;
 
 use App\Actions\GetInfoInterface;
 use App\Enums\Methods\TelegramApiMethodsEnum;

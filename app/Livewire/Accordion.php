@@ -2,22 +2,17 @@
 
 namespace App\Livewire;
 
+use App\Actions\Constructor\AccordionAction;
+use League\CommonMark\Util\ArrayCollection;
 use Livewire\Component;
 
 class Accordion extends Component
 {
-    public array $items = [
-        [
-            'id' => 1,
-            'title' => 'Item 1',
-            'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque in laboriosam libero nisi perferendis rerum sunt tempora voluptas? Blanditiis hic itaque laboriosam optio porro quas quo temporibus velit vero!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque in laboriosam libero nisi perferendis rerum sunt tempora voluptas? Blanditiis hic itaque laboriosam optio porro quas quo temporibus velit vero!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque in laboriosam libero nisi perferendis rerum sunt tempora voluptas? Blanditiis hic itaque laboriosam optio porro quas quo temporibus velit vero!'
-        ],
-        ['id' => 2, 'title' => 'Item 2', 'content' => 'Content for item 2.'],
-        ['id' => 3, 'title' => 'Item 3', 'content' => 'Content for item 3.'],
-    ];
+    public array $accordion = [];
 
     public function render()
     {
+        $this->accordion = (new AccordionAction())->execute();
         return view('livewire.accordion');
     }
 }
