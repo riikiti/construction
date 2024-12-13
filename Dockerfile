@@ -6,6 +6,10 @@ WORKDIR /var/www
 
 # Install dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
+    apt-transport-https \
+    ca-certificates \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends \
     git \
     curl \
     libpng-dev \
