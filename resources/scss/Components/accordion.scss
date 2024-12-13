@@ -12,8 +12,10 @@
     justify-content: flex-start;
     margin-bottom: $margin;
   }
-  &-body{
 
+  &-body {
+    color: $black;
+    font-size: 16px;
   }
 
   &-item {
