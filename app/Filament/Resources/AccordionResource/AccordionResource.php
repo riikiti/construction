@@ -16,9 +16,11 @@ class AccordionResource extends Resource
 {
     protected static ?string $model = Accordion::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-question-mark-circle';
     protected static ?string $navigationLabel = 'Часто задаваемые вопросы';
     protected static ?string $breadcrumb = 'Часто задаваемые вопросы';
+    protected static ?string $navigationGroup = 'Контент';
+    protected static ?int $navigationSort = 2;
 
     public static function form(Form $form): Form
     {
