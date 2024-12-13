@@ -1,0 +1,26 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  &-content {
+    max-width: $large;
+    width: 100%;
+  }
+}
+
+.header {
+  position: sticky;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: $padding-header;
+  align-items: center;
+  height: max-content;
+  background-color: $white;
+  @include vp-1024() {
+    flex-direction: column;
+  }
+}
