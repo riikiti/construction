@@ -18,6 +18,7 @@ class AccordionResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
     protected static ?string $navigationLabel = 'Часто задаваемые вопросы';
+    protected static ?string $breadcrumb = 'Часто задаваемые вопросы';
 
     public static function form(Form $form): Form
     {
