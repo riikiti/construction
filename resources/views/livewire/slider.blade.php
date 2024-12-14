@@ -1,4 +1,4 @@
-<div class="slider">
+<div class="slider" id="{{$name}}">
     <div class="slider-title">
         {{$title}}
     </div>
