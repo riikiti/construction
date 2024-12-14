@@ -11,4 +11,10 @@ class ListAccordions extends ListRecords
     protected static string $resource = AccordionResource::class;
     protected static ?string $title = 'Часто задаваемые вопросы';
 
+    protected function getHeaderActions(): array
+    {
+        return [
+            Actions\CreateAction::make(),
+        ];
+    }
 }

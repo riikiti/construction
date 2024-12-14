@@ -7,8 +7,8 @@ use App\Models\Accordion;
 class AccordionRepository implements RepositoryInterface
 {
 
-    public function getFirstAccordion(): array
+    public function getAccordionItems(): array
     {
-        return Accordion::query()->with('items')->first()->toArray();
+        return Accordion::query()->get()->toArray();
     }
 }

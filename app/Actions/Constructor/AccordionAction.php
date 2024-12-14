@@ -15,6 +15,6 @@ class AccordionAction implements ActionInterface
 
     public function execute(): array
     {
-        return $this->accordionRepository->getFirstAccordion();
+        return $this->accordionRepository->getAccordionItems();
     }
 }

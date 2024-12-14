@@ -1,12 +1,10 @@
 <div class="accordion">
     <div class="accordion-title">
-        <h2 class="title--2">{{$accordion['title']}}</h2>
-    </div>
-    <div class="accordion-body">
-        <p>{{$accordion['description']}}</p>
+        <h2 class="title--2">Часто задаваемые вопросы</h2>
     </div>
     <div class=""></div>
-    @foreach ($accordion['items'] as $item)
+
+    @foreach ($accordion as $item)
         <div class="accordion-item" x-data="{ open: false }">
             <div class="accordion-item__title" @click="open = !open">
                 <h3 class="text-lg font-semibold">{{ $item['title'] }}</h3>

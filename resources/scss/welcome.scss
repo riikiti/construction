@@ -18,7 +18,9 @@
   justify-content: space-between;
   padding: $padding-header;
   align-items: center;
-  height: max-content;
+  height: auto;
+  top: 0;
+  z-index: 100;
   background-color: $white;
   @include vp-1024() {
     flex-direction: column;
