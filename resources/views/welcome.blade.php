@@ -22,8 +22,10 @@
                 @switch($item['name'])
                     @case(\App\Enums\LandingEnum::Accordion->name)
                         <livewire:accordion :title="$item['label']"/>
+                        @break
                     @case(\App\Enums\LandingEnum::Slider->name)
                         <livewire:slider :title="$item['label']" />
+                        @break
                 @endswitch
             @endif
         @endforeach
