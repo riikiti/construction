@@ -1,6 +1,6 @@
 <div class="slider" id="{{$name}}">
     <div class="slider-title">
-        {{$title}}
+        <h2 class="title title--2"> {{$title}}</h2>
     </div>
     <!-- Слайды -->
     <div class="slides" style="position: relative; overflow: hidden;">

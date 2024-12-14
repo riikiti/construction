@@ -14,7 +14,7 @@
     @vite([ 'resources/js/app.js','resources/scss/app.scss','resources/css/app.css'])
 </head>
 <body>
-<livewire:header/>
+<livewire:header :logo="$logo"/>
 <div class="layout">
     <div class="layout-content">
         @foreach($page as $item)
