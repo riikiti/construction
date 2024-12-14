@@ -10,10 +10,11 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('accordions', function (Blueprint $table) {
+        Schema::create('landings', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('description',4048)->nullable();
+            $table->string('name');
+            $table->string('label');
+            $table->string('short_label');
             $table->integer('sort')->default(1);
             $table->boolean('is_active')->default(true);
             $table->timestamps();
@@ -25,6 +26,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('accordions');
+        Schema::dropIfExists('landings');
     }
 };

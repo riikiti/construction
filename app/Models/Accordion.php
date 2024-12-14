@@ -12,14 +12,9 @@ use Ramsey\Collection\Collection;
  * @property int $id
  * @property string $title
  * @property string $description
- * @property AccordionItem|Collection $items
  */
 class Accordion extends Model
 {
     protected $fillable = ['title', 'description'];
 
-    public function items(): HasMany
-    {
-      return  $this->hasMany(AccordionItem::class);
-    }
 }

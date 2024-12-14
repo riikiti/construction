@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Filament\Resources\AccordionResource;
+namespace App\Filament\Resources\LandingResource;
 
-use App\Models\Accordion;
+use App\Models\Landing;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -13,17 +13,14 @@ use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
-use Illuminate\Support\Str;
 
-class AccordionResource extends Resource
+class LandingResource extends Resource
 {
-    protected static ?string $model = Accordion::class;
+    protected static ?string $model = Landing::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-question-mark-circle';
-    protected static ?string $navigationLabel = 'Часто задаваемые вопросы';
-    protected static ?string $breadcrumb = 'Часто задаваемые вопросы';
-    protected static ?string $navigationGroup = 'Контент';
-    protected static ?int $navigationSort = 2;
+    protected static ?string $navigationIcon = 'heroicon-o-adjustments-horizontal';
+    protected static ?string $navigationLabel = 'Структура сайта';
+    protected static ?string $breadcrumb = 'Структура сайта';
 
     public static function form(Form $form): Form
     {
@@ -31,11 +28,13 @@ class AccordionResource extends Resource
             ->schema([
                 Grid::make(1)
                     ->schema([
-                        TextInput::make('title')->label('Заголовок'),
-                        Textarea::make('description')->label('Описание')->maxLength(4096)->nullable(),
+                        TextInput::make('name')->label('Служебное название')->disabled(),
+                        Textarea::make('label')->label('Название блока')->maxLength(255)->nullable(),
+                        Textarea::make('short_label')->label('Короткое название в шапке')->maxLength(255)->nullable(),
                         TextInput::make('sort')->label('Сортировка')->numeric()->default(1),
                         Toggle::make('is_active')->label('Показывать на сайте?')->default(true),
                     ])
+
             ]);
     }
 
@@ -43,10 +42,8 @@ class AccordionResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('title')->label('Заголовок')->searchable()->sortable(),
-                TextColumn::make('description')->label('Описание')->searchable()->sortable()->formatStateUsing(
-                    fn($state) => Str::limit($state, 15)
-                ),
+                TextColumn::make('label')->label('Заголовок')->searchable()->sortable(),
+                TextColumn::make('short_label')->label('Короткое название в шапке')->searchable()->sortable(),
                 TextColumn::make('sort')->label('Сортировка')->sortable(),
                 ToggleColumn::make('is_active')->label('Показывать на сайте?'),
             ])
@@ -66,16 +63,16 @@ class AccordionResource extends Resource
     public static function getRelations(): array
     {
         return [
-
+            //
         ];
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListAccordions::route('/'),
-            'create' => Pages\CreateAccordion::route('/create'),
-            'edit' => Pages\EditAccordion::route('/{record}/edit'),
+            'index' => Pages\ListLandings::route('/'),
+            'create' => Pages\CreateLanding::route('/create'),
+            'edit' => Pages\EditLanding::route('/{record}/edit'),
         ];
     }
 }

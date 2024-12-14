@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>{{config('app.name')}}</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -14,18 +14,20 @@
     @vite([ 'resources/js/app.js','resources/scss/app.scss','resources/css/app.css'])
 </head>
 <body>
-
-<header class="header">
-    <livewire:accordion/>
-
-</header>
+<livewire:header/>
 <div class="layout">
     <div class="layout-content">
-        <livewire:accordion/>
-        <livewire:slider/>
+        @foreach($page as $item)
+            @if($item['is_active'])
+                @switch($item['name'])
+                    @case(\App\Enums\LandingEnum::Accordion->name)
+                        <livewire:accordion :title="$item['label']"/>
+                    @case(\App\Enums\LandingEnum::Slider->name)
+                        <livewire:slider :title="$item['label']" />
+                @endswitch
+            @endif
+        @endforeach
     </div>
-
-
 </div>
 
 </body>

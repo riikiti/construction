@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Actions\Constructor;
+namespace App\Actions\Constructor\Components;
 
+use App\Actions\Constructor\ActionInterface;
 use App\Repositories\AccordionRepository;
 
 class AccordionAction implements ActionInterface
@@ -15,6 +16,6 @@ class AccordionAction implements ActionInterface
 
     public function execute(): array
     {
-        return $this->accordionRepository->getAccordionItems();
+        return $this->accordionRepository->getItems();
     }
 }

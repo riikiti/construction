@@ -2,30 +2,38 @@
 
 namespace App\Livewire;
 
+use App\Actions\Constructor\Components\SliderAction;
+use App\Enums\LandingEnum;
 use Livewire\Component;
 
 class Slider extends Component
 {
-    public $slides = [
-        ['id' => 1, 'image' => 'storage/img/TLC-01-01.jpg', 'title' => 'Слайд 1', 'description' => 'Описание слайда 1'],
-        ['id' => 2, 'image' => 'storage/img/TLC-01-02.jpg', 'title' => 'Слайд 2', 'description' => 'Описание слайда 2'],
-        ['id' => 3, 'image' => 'storage/img/TLC-01-03 (PS).jpg', 'title' => 'Слайд 3', 'description' => 'Описание слайда 3'],
-    ];
+    public array $slides = [];
 
-    public $currentSlide = 0;
+    public int $currentSlide = 0;
+    public string $title;
+    public string $name;
 
-    public function nextSlide()
+    public function nextSlide(): void
     {
         $this->currentSlide = ($this->currentSlide + 1) % count($this->slides);
     }
 
-    public function prevSlide()
+    public function prevSlide(): void
     {
         $this->currentSlide = ($this->currentSlide - 1 + count($this->slides)) % count($this->slides);
     }
 
-    public function render()
+    public function mount(string $title): void
     {
+        $this->title = $title;
+    }
+
+    public function render(
+    ): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
+    {
+        $this->name = LandingEnum::Slider->name;
+        $this->slides = (new SliderAction())->execute();
         return view('livewire.slider');
     }
 }

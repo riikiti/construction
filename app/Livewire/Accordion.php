@@ -2,17 +2,25 @@
 
 namespace App\Livewire;
 
-use App\Actions\Constructor\AccordionAction;
-use League\CommonMark\Util\ArrayCollection;
+use App\Actions\Constructor\Components\AccordionAction;
+use App\Enums\LandingEnum;
 use Livewire\Component;
 
 class Accordion extends Component
 {
     public array $accordion = [];
+    public string $title;
+    public string $name;
 
-    public function render()
+    public function mount($title = 'Часто задаваемые вопросы'): void
+    {
+        $this->title = $title;
+    }
+
+    public function render(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
     {
         $this->accordion = (new AccordionAction())->execute();
+        $this->name = LandingEnum::Accordion->name;
         return view('livewire.accordion');
     }
 }

@@ -6,5 +6,5 @@ use App\Models\Accordion;
 
 interface RepositoryInterface
 {
-    public function getAccordionItems(): array;
+    public function getItems(): array;
 }
