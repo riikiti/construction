@@ -29,10 +29,14 @@
                     @case(\App\Enums\LandingEnum::Card->name)
                         <livewire:card :title="$item['label']" />
                         @break
+                    @case(\App\Enums\LandingEnum::Connect->name)
+                        <livewire:connect :title="$item['label']" />
+                        @break
                 @endswitch
             @endif
         @endforeach
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 </div>
 
 </body>

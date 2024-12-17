@@ -12,7 +12,7 @@ class Card extends Component
     public string $name;
     public array $cards = [];
 
-    public function mount($title = 'Наши преимущества'): void
+    public function mount(string $title = 'Наши преимущества'): void
     {
         $this->title = $title;
     }

@@ -35,5 +35,12 @@ class LandeingSeeder extends Seeder
             'sort' => 2,
             'is_active' => true
         ]);
+        Landing::create([
+            'name' => LandingEnum::Connect->name,
+            'label' => 'Связаться с нами',
+            'short_label' => 'Связь',
+            'sort' => 4,
+            'is_active' => true
+        ]);
     }
 }

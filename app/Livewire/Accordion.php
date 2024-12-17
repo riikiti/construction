@@ -12,7 +12,7 @@ class Accordion extends Component
     public string $title;
     public string $name;
 
-    public function mount($title = 'Часто задаваемые вопросы'): void
+    public function mount(string $title = 'Часто задаваемые вопросы'): void
     {
         $this->title = $title;
     }
