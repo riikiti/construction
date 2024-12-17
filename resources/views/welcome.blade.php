@@ -16,8 +16,9 @@
 <body>
 <livewire:header :logo="$logo"/>
 <div class="layout">
-    <div class="layout-content">
+
         @foreach($page as $item)
+        <div class="layout-content">
             @if($item['is_active'])
                 @switch($item['name'])
                     @case(\App\Enums\LandingEnum::Accordion->name)
@@ -34,8 +35,9 @@
                         @break
                 @endswitch
             @endif
+        </div>
         @endforeach
-    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 </div>
 
