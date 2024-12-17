@@ -15,6 +15,10 @@ class Header extends Component
         $this->logo = $logo;
     }
 
+    public function scrollToTop()
+    {
+        $this->dispatchBrowserEvent('scroll-to-top');
+    }
     public function render(
     ): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
     {
