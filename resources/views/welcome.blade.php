@@ -26,6 +26,9 @@
                     @case(\App\Enums\LandingEnum::Slider->name)
                         <livewire:slider :title="$item['label']" />
                         @break
+                    @case(\App\Enums\LandingEnum::Card->name)
+                        <livewire:card :title="$item['label']" />
+                        @break
                 @endswitch
             @endif
         @endforeach

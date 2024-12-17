@@ -2,7 +2,7 @@
 
 namespace App\Actions\Social\Telegram;
 
-use App\Actions\SendInterface;
+use App\Actions\Social\SendInterface;
 use App\Models\Joke;
 use SergiX44\Nutgram\Nutgram;
 use SergiX44\Nutgram\Telegram\Properties\ParseMode;

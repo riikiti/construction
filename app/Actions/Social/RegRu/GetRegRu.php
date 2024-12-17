@@ -2,7 +2,7 @@
 
 namespace App\Actions\Social\RegRu;
 
-use App\Actions\GetInfoInterface;
+use App\Actions\Social\GetInfoInterface;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 

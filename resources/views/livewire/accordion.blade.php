@@ -1,7 +1,7 @@
 
 <div class="accordion" id="{{$name}}">
     <div class="accordion-title">
-        <h2 class="title--2">{{$title}}</h2>
+        <h2 class="title title--2">{{$title}}</h2>
     </div>
     <div class=""></div>
 

@@ -2,7 +2,7 @@
 
 namespace App\Actions\Social\Telegram\GetTelegram\GetTelegramInfoAction;
 
-use App\Actions\GetInfoInterface;
+use App\Actions\Social\GetInfoInterface;
 use App\Enums\Methods\TelegramApiMethodsEnum;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;

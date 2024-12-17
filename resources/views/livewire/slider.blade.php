@@ -36,9 +36,11 @@
 
     </div>
 
-    <!-- Навигация -->
-    <div class="navigation">
-        <button wire:click="prevSlide" class="prev">❮</button>
-        <button wire:click="nextSlide" class="next">❯</button>
-    </div>
+    @if(!empty($slides))
+        <!-- Навигация -->
+        <div class="navigation">
+            <button wire:click="prevSlide" class="prev">❮</button>
+            <button wire:click="nextSlide" class="next">❯</button>
+        </div>
+    @endif
 </div>

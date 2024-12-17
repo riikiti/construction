@@ -17,7 +17,7 @@ class LogoResource extends Resource
 {
     protected static ?string $model = Logo::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-shopping-bag';
 
     protected static ?string $navigationLabel = 'Логотип';
     protected static ?string $breadcrumb = 'Логотип';

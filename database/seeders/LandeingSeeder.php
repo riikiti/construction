@@ -25,6 +25,13 @@ class LandeingSeeder extends Seeder
             'name' => LandingEnum::Slider->name,
             'label' => 'Наши Работы',
             'short_label' => 'Работы',
+            'sort' => 3,
+            'is_active' => true
+        ]);
+        Landing::create([
+            'name' => LandingEnum::Card->name,
+            'label' => 'Наши примущества',
+            'short_label' => 'Преимущества',
             'sort' => 2,
             'is_active' => true
         ]);
