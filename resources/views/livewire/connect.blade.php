@@ -28,26 +28,13 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
-    <!-- Модалка -->
-    <div x-data="{ showModal: false }" @formSubmitted.window="showModal = true">
-        <!-- Затемненный фон -->
-        <div
-                x-show="showModal"
-                x-transition
-                class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center z-50"
-                style="display: none;"
-        >
-            <!-- Содержимое модалки -->
-            <div class="bg-white p-6 rounded shadow-lg">
-                <h2 class="text-xl font-semibold mb-4">Форма успешно отправлена!</h2>
-                <p>Спасибо за вашу заявку. Мы свяжемся с вами в ближайшее время.</p>
-                <button
-                        @click="showModal = false"
-                        class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-                >
-                    Закрыть
-                </button>
+    @if ($isModalOpen)
+        <div class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75 z-50">
+            <div class="bg-white p-6 rounded shadow-lg text-center">
+                <h2 class="text-lg font-bold mb-4">Спасибо за вашу заявку!</h2>
+                <p class="mb-4">Мы свяжемся с вами в ближайшее время.</p>
+                <button wire:click="closeModal" class="px-4 py-2 bg-blue-500 text-white rounded">Закрыть</button>
             </div>
         </div>
-    </div>
+    @endif
 </div>
