@@ -17,30 +17,30 @@
 <livewire:header :logo="$logo"/>
 <div class="layout">
 
-        @foreach($page as $item)
+    @foreach($page as $item)
 
-            @if($item['is_active'])
-                @switch($item['name'])
-                    @case(\App\Enums\LandingEnum::Accordion->name)
-                        <livewire:accordion :title="$item['label']"/>
-                        @break
-                    @case(\App\Enums\LandingEnum::Slider->name)
-                        <livewire:slider :title="$item['label']" />
-                        @break
-                    @case(\App\Enums\LandingEnum::Card->name)
-                        <livewire:card :title="$item['label']" />
-                        @break
-                    @case(\App\Enums\LandingEnum::Connect->name)
-                        <livewire:connect :title="$item['label']" />
-                        @break
-                    @case(\App\Enums\LandingEnum::SubHeader->name)
-                        <livewire:sub-header  />
-                        @break
-                @endswitch
-            @endif
-        @endforeach
+        @if($item['is_active'])
+            @switch($item['name'])
+                @case(\App\Enums\LandingEnum::Accordion->name)
+                    <livewire:accordion :title="$item['label']"/>
+                    @break
+                @case(\App\Enums\LandingEnum::Slider->name)
+                    <livewire:slider :title="$item['label']"/>
+                    @break
+                @case(\App\Enums\LandingEnum::Card->name)
+                    <livewire:card :title="$item['label']"/>
+                    @break
+                @case(\App\Enums\LandingEnum::Connect->name)
+                    <livewire:connect :title="$item['label']"/>
+                    @break
+                @case(\App\Enums\LandingEnum::SubHeader->name)
+                    <livewire:sub-header/>
+                    @break
+            @endswitch
+        @endif
+    @endforeach
 
 </div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.8/inputmask.min.js"></script>
 </body>
 </html>

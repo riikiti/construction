@@ -8,7 +8,7 @@
         <form wire:submit.prevent="submit">
             <div>
                 <label for="phone">Телефон</label>
-                <input type="tel" id="phone" wire:model="phone" placeholder="Телефон">
+                <input type="tel" id="phone" wire:model.lazy="phone" placeholder="Телефон">
                 @error('phone') <span class="text-red-500">{{ $message }}</span> @enderror
             </div>
 
@@ -31,13 +31,41 @@
         </form>
 
         @if ($isModalOpen)
-            <div class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75 z-50">
-                <div class="bg-white p-6 rounded shadow-lg text-center">
-                    <h2 class="text-lg font-bold mb-4">Спасибо за вашу заявку!</h2>
-                    <p class="mb-4">Мы свяжемся с вами в ближайшее время.</p>
-                    <button wire:click="closeModal" class="px-4 py-2 bg-blue-500 text-white rounded">Закрыть</button>
+            <div>
+                <div class="modal" wire:click="closeModal">
+                    <div class="modal__content">
+                        <h2 class="modal__title">Спасибо за вашу заявку!</h2>
+                        <p class="modal__text">Мы свяжемся с вами в ближайшее время.</p>
+                        <button wire:click="closeModal" class="modal__button">Закрыть</button>
+                    </div>
                 </div>
             </div>
         @endif
     </div>
 </div>
+
+<script>
+    document.addEventListener('livewire:load', () => {
+        const phoneInput = document.getElementById('phone');
+
+        if (phoneInput) {
+            Inputmask({
+                mask: '+7 (999) 999-99-99',
+                placeholder: ' ',
+                clearMaskOnLostFocus: true
+            }).mask(phoneInput);
+        }
+    });
+
+    document.addEventListener('livewire:input', () => {
+        const phoneInput = document.getElementById('phone');
+
+        if (phoneInput && !phoneInput.inputmask) {
+            Inputmask({
+                mask: '+7 (999) 999-99-99',
+                placeholder: ' ',
+                clearMaskOnLostFocus: true
+            }).mask(phoneInput);
+        }
+    });
+</script>

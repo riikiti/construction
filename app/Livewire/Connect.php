@@ -19,10 +19,12 @@ class Connect extends Component
 
     protected $rules = [
         'comment' => 'required|string|max:1024',
+        'phone' => 'nullable|string|regex:/^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/',
     ];
     protected $messages = [
         'comment.required' => 'Пожалуйста, заполните комментарий.',
         'comment.max' => 'Комментарий слишком длинный. Максимум 1024 символа.',
+        'phone.regex' => 'Введите телефон в формате +7 (999) 999-99-99.',
     ];
 
     public function __construct()
