@@ -22,10 +22,10 @@ class CardResource extends Resource
     protected static ?string $model = Card::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-clipboard';
-    protected static ?string $navigationLabel = 'Карточки';
-    protected static ?string $breadcrumb = 'Карточки';
+    protected static ?string $navigationLabel = 'Наши преимущества';
+    protected static ?string $breadcrumb = 'Наши преимущества';
     protected static ?string $navigationGroup = 'Контент';
-    protected static ?int $navigationSort = 5;
+    protected static ?int $navigationSort = 4;
 
     public static function form(Form $form): Form
     {
@@ -33,8 +33,8 @@ class CardResource extends Resource
             ->schema([
                 Grid::make(1)
                     ->schema([
-                        Textarea::make('title')->label('Название карточки')->maxLength(255)->nullable(),
-                        Textarea::make('description')->label('Описание')->maxLength(255)->nullable(),
+                        Textarea::make('title')->label('Название карточки')->maxLength(255)->required(),
+                        Textarea::make('description')->label('Описание')->maxLength(1024)->nullable(),
                         FileUpload::make('image')
                             ->label('Картинка')
                             ->directory('card-image')

@@ -8,5 +8,5 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateCard extends CreateRecord
 {
     protected static string $resource = CardResource::class;
-    protected static ?string $title = 'Карточки';
+    protected static ?string $title = 'Наши преимущества';
 }

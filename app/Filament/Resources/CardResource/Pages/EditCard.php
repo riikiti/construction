@@ -9,7 +9,7 @@ use Filament\Resources\Pages\EditRecord;
 class EditCard extends EditRecord
 {
     protected static string $resource = CardResource::class;
-    protected static ?string $title = 'Карточки';
+    protected static ?string $title = 'Наши преимущества';
 
     protected function getHeaderActions(): array
     {

@@ -18,7 +18,7 @@ class LandeingSeeder extends Seeder
             'name' => LandingEnum::Accordion->name,
             'label' => 'Часто задаваемые вопросы',
             'short_label' => 'Вопросы',
-            'sort' => 2,
+            'sort' => 5,
             'is_active' => true
         ]);
         Landing::create([
@@ -39,7 +39,7 @@ class LandeingSeeder extends Seeder
             'name' => LandingEnum::Connect->name,
             'label' => 'Связаться с нами',
             'short_label' => 'Связь',
-            'sort' => 5,
+            'sort' => 6,
             'is_active' => true
         ]);
         Landing::create([
@@ -47,6 +47,13 @@ class LandeingSeeder extends Seeder
             'label' => 'Слоган',
             'short_label' => 'Слоган',
             'sort' => 1,
+            'is_active' => true
+        ]);
+        Landing::create([
+            'name' => LandingEnum::HorizontalCards->name,
+            'label' => 'О нас',
+            'short_label' => 'О нас',
+            'sort' => 2,
             'is_active' => true
         ]);
     }

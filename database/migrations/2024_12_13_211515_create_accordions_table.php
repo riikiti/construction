@@ -13,7 +13,7 @@ return new class extends Migration {
         Schema::create('accordions', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('description',4048)->nullable();
+            $table->string('description',1024)->nullable();
             $table->integer('sort')->default(1);
             $table->boolean('is_active')->default(true);
             $table->timestamps();

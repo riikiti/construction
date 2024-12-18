@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('cards', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('description')->nullable();
+            $table->string('description',1024)->nullable();
             $table->string('image')->nullable();
             $table->boolean('is_active')->default(true);
             $table->integer('sort')->default(true);

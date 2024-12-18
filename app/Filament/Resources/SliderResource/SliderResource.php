@@ -34,7 +34,7 @@ class SliderResource extends Resource
                 Grid::make(1)
                     ->schema([
                         Textarea::make('title')->label('Название блока')->maxLength(255)->nullable(),
-                        Textarea::make('description')->label('Описание')->maxLength(255)->nullable(),
+                        Textarea::make('description')->label('Описание')->maxLength(1024)->nullable(),
                         FileUpload::make('image')
                             ->label('Картинка')
                             ->directory('slider-image')
