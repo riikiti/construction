@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Filament\Resources\CardResource;
+namespace App\Filament\Resources\SubHeaderResource;
 
-use App\Models\Card;
+use App\Models\SubHeader;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Textarea;
@@ -17,15 +17,15 @@ use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
 
-class CardResource extends Resource
+class SubHeaderResource extends Resource
 {
-    protected static ?string $model = Card::class;
+    protected static ?string $model = SubHeader::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-clipboard';
-    protected static ?string $navigationLabel = 'Карточки';
-    protected static ?string $breadcrumb = 'Карточки';
+    protected static ?string $navigationIcon = 'heroicon-o-book-open';
+    protected static ?string $navigationLabel = 'Первый блок';
+    protected static ?string $breadcrumb = 'Первый блок';
     protected static ?string $navigationGroup = 'Контент';
-    protected static ?int $navigationSort = 5;
+    protected static ?int $navigationSort = 2;
 
     public static function form(Form $form): Form
     {
@@ -33,13 +33,12 @@ class CardResource extends Resource
             ->schema([
                 Grid::make(1)
                     ->schema([
-                        Textarea::make('title')->label('Название карточки')->maxLength(255)->nullable(),
+                        Textarea::make('title')->label('Название блока')->maxLength(255)->required(),
                         Textarea::make('description')->label('Описание')->maxLength(255)->nullable(),
                         FileUpload::make('image')
                             ->label('Картинка')
-                            ->directory('card-image')
+                            ->directory('slider-image')
                             ->disk('public'),
-                        TextInput::make('sort')->label('Сортировка')->numeric()->default(1),
                         Toggle::make('is_active')->label('Показывать на сайте?')->default(true),
                     ])
 
@@ -50,12 +49,11 @@ class CardResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('title')->label('Название карточки')->searchable()->sortable(),
+                TextColumn::make('title')->label('Название блока')->searchable()->sortable(),
                 TextColumn::make('description')->label('Описание')->searchable()->sortable()->formatStateUsing(
                     fn($state) => Str::limit($state, 15)
                 ),
                 ImageColumn::make('image')->label('Картинка')->disk('public'),
-                TextColumn::make('sort')->label('Сортировка')->sortable(),
                 ToggleColumn::make('is_active')->label('Показывать на сайте?'),
             ])
             ->filters([
@@ -65,9 +63,7 @@ class CardResource extends Resource
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+
             ]);
     }
 
@@ -81,9 +77,8 @@ class CardResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListCards::route('/'),
-            'create' => Pages\CreateCard::route('/create'),
-            'edit' => Pages\EditCard::route('/{record}/edit'),
+            'index' => Pages\ListSubHeaders::route('/'),
+            'edit' => Pages\EditSubHeader::route('/{record}/edit'),
         ];
     }
 }

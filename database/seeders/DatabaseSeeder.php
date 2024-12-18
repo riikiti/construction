@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(class: [
             LandeingSeeder::class,
-            LogoSeeder::class
+            LogoSeeder::class,
+            SubHeaderSeeder::class
         ]);
     }
 }

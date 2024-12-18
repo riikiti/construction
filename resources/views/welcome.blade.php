@@ -18,7 +18,7 @@
 <div class="layout">
 
         @foreach($page as $item)
-        <div class="layout-content">
+
             @if($item['is_active'])
                 @switch($item['name'])
                     @case(\App\Enums\LandingEnum::Accordion->name)
@@ -33,9 +33,11 @@
                     @case(\App\Enums\LandingEnum::Connect->name)
                         <livewire:connect :title="$item['label']" />
                         @break
+                    @case(\App\Enums\LandingEnum::SubHeader->name)
+                        <livewire:sub-header  />
+                        @break
                 @endswitch
             @endif
-        </div>
         @endforeach
 
 </div>

@@ -13,7 +13,7 @@ class Connect extends Component
     public string $comment = '';
     public string $title;
     public string $name;
-    public bool $isModalOpen = false; // Флаг для отображения модального окна
+    public bool $isModalOpen = false;
 
     private ConnectAction $connectAction;
 

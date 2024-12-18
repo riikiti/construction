@@ -8,4 +8,5 @@ enum LandingEnum: string
     case Slider = 'Slider';
     case Card = 'Card';
     case Connect = 'Connect';
+    case SubHeader = 'SubHeader';
 }
