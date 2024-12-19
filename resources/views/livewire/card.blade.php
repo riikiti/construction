@@ -1,5 +1,5 @@
-<div class="layout-content" id="{{$name}}">
-    <div class="card">
+<div class="layout-content" >
+    <div class="card" id="{{$name}}">
         <div class="card-title">
             <h2 class="title title--2">{{$title}}</h2>
         </div>
