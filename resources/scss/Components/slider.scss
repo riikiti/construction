@@ -5,6 +5,15 @@
   width: 100%;
   max-width: 1350px;
   height: 800px;
+  &-title {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: $margin;
+    @include vp-1024() {
+      justify-content: center;
+    }
+  }
 }
 
 .slides {

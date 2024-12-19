@@ -11,6 +11,9 @@
     width: 100%;
     justify-content: flex-start;
     margin-bottom: $margin;
+    @include vp-1024() {
+      justify-content: center;
+    }
   }
 
   &-body {
