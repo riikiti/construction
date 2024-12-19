@@ -29,6 +29,10 @@
     &:has(:nth-child(1)):only-child {
       grid-template-columns: 2fr;
       grid-template-rows: 1fr;
+      @include vp-1024() {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+      }
     }
 
     &:has(:nth-child(2)),
@@ -37,12 +41,21 @@
     &:has(:nth-child(5)) {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(2, 1fr);
+      @include vp-1024() {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+      }
     }
 
     &:has(:nth-child(n + 6)) {
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(2, 1fr);
+      @include vp-1024() {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+      }
     }
+
 
     &__item {
       padding: 20px;
