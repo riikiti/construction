@@ -1,0 +1,54 @@
+@property --from {
+  syntax: '<integer>';
+  initial-value: 0;
+  inherits: false;
+}
+
+.counter-block {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &-number {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+      font-size: 86px;
+      font-weight: bold;
+      span{
+        width: max-content;
+      }
+      .prefix{
+        font-size: 36px;
+      }
+    }
+  }
+}
+
+.counter {
+  transition: --from 1s;
+  counter-reset: int var(--from);
+  animation: counter var(--time, 1000) forwards ease-in-out;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: max-content;
+}
+
+.counter::after {
+  content: counter(int);
+}
+
+@keyframes counter {
+  to {
+    --from: var(--to, 100);
+  }
+}

@@ -10,4 +10,5 @@ enum LandingEnum: string
     case Connect = 'Connect';
     case SubHeader = 'SubHeader';
     case HorizontalCards = 'HorizontalCards';
+    case Counter = 'Counter';
 }

@@ -7,7 +7,7 @@ use App\Models\Landing;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class LandeingSeeder extends Seeder
+class LandingSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -53,6 +53,13 @@ class LandeingSeeder extends Seeder
             'name' => LandingEnum::HorizontalCards->name,
             'label' => 'О нас',
             'short_label' => 'О нас',
+            'sort' => 2,
+            'is_active' => true
+        ]);
+        Landing::create([
+            'name' => LandingEnum::Counter->name,
+            'label' => 'Цифры',
+            'short_label' => 'Цифры',
             'sort' => 2,
             'is_active' => true
         ]);

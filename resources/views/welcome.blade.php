@@ -38,10 +38,12 @@
                 @case(\App\Enums\LandingEnum::HorizontalCards->name)
                     <livewire:horizontal-card :title="$item['label']"/>
                     @break
+                @case(\App\Enums\LandingEnum::Counter->name)
+                    <livewire:counter :title="$item['label']"/>
+                    @break
             @endswitch
         @endif
     @endforeach
-
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.8/inputmask.min.js"></script>
 </body>

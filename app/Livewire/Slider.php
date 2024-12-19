@@ -14,12 +14,12 @@ class Slider extends Component
     public string $title;
     public string $name;
 
-    public function nextSlide(): void
+    public function nextSlide()
     {
         $this->currentSlide = ($this->currentSlide + 1) % count($this->slides);
     }
 
-    public function prevSlide(): void
+    public function prevSlide()
     {
         $this->currentSlide = ($this->currentSlide - 1 + count($this->slides)) % count($this->slides);
     }
