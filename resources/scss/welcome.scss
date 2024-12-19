@@ -59,3 +59,26 @@
     }
   }
 }
+
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: $padding-header;
+  align-items: center;
+  height: auto;
+  top: 0;
+  z-index: 100;
+  background-color: $white;
+
+  &-logo {
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+
+    img {
+      width: 100px;
+      height: 50px;
+      object-fit: contain;
+    }
+  }
+}

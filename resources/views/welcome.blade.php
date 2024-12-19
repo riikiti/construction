@@ -45,6 +45,7 @@
         @endif
     @endforeach
 </div>
+<livewire:footer :logo="$logo"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.8/inputmask.min.js"></script>
 </body>
 </html>
