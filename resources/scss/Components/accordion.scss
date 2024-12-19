@@ -27,6 +27,10 @@
     flex-direction: column;
     padding: $padding-accordion;
     border-bottom: 1px solid $black;
+    @include vp-1450() {
+      width: 100%;
+      padding: 20px;
+    }
 
     &__title {
       width: 100%;

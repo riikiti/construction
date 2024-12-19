@@ -29,14 +29,22 @@
       background-color: $white;
       display: flex;
       flex-direction: row;
-
+      @include vp-1024() {
+        flex-direction: column;
+      }
 
       &:nth-child(even) {
         flex-direction: row-reverse;
+        @include vp-1024() {
+          flex-direction: column;
+        }
       }
 
       img {
         width: 50%;
+        @include vp-1024() {
+          width: 100%;
+        }
       }
 
       &-body {
@@ -45,6 +53,9 @@
         flex-direction: column;
         gap: 20px;
         overflow: hidden;
+        @include vp-1024() {
+          width: 100%;
+        }
         p{
           width: 100%;
           height: max-content;

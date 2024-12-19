@@ -3,7 +3,6 @@
         <div class="accordion-title">
             <h2 class="title title--2">{{$title}}</h2>
         </div>
-        <div class=""></div>
 
         @foreach ($accordion as $item)
             @if($item['is_active'])
